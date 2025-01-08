@@ -261,7 +261,9 @@ export default function NavBar() {
               </li>
             </ul>
           </div>
-
+&nbsp;
+&nbsp;
+&nbsp;
           {/* User Profile */}
           {getTokenData() != null && (
             <div className="dropdown ms-3">
