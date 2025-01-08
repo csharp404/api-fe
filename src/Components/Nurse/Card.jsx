@@ -38,7 +38,7 @@ export default function Card() {
           message: t("Failed To Load Nurse Data"),
         });
       });
-  }, []);
+  }, [doctors]);
 
   if (loading) {
     return (

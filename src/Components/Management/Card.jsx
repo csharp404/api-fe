@@ -30,7 +30,7 @@ export default function Card() {
     };
 
     fetchDoctors();
-  }, []);
+  }, [doctors]);
 
   if (loading) {
     return <SpinnerLoading message={t("Loading Staff Data, Please Hold On...")} />;

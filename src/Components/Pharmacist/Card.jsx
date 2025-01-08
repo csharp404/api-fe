@@ -32,7 +32,7 @@ export default function Card() {
         setLoading(false); // Set loading to false even if there's an error
         setToastMessage({ type: "error", message: t("Failed To Load Data.") });
       });
-  }, []);
+  }, [doctors]);
 
   if (loading) {
     return <SpinnerLoading message={t("Loading Pharmacist Data, Please Hold On...")} />;

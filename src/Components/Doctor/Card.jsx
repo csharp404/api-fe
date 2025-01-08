@@ -37,7 +37,7 @@ export default function Card() {
           message: t("Failed To Load Doctor Data."),
         });
       });
-  }, []);
+  }, [doctors]);
 
   if (loading) {
     return (
