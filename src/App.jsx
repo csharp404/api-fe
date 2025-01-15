@@ -47,6 +47,8 @@ import Login from "./Components/GeneralBlock/Login";
 import ProtectedRoute from "./Components/GeneralBlock/Test";
 import "./styles/mycss.css"
 
+import Verification from './Components/GeneralBlock/VerificationCode'
+
 function App() {
 
   return (
@@ -55,6 +57,7 @@ function App() {
 
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/verification/:email" element={<Verification />} />
 
         <Route
           path="/create-vital-signs/:id"

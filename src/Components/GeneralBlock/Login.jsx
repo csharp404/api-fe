@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import ToastMessage from "./ToastMsg";
+import { jwtDecode } from "jwt-decode";
 
 export default function Login() {
  const { t,i18n } = useTranslation();
@@ -11,7 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
   const [redirect, setRedirect] = useState(false);
-
+const navigate = useNavigate();
   // Handle form input changes
   const handleEmailChange = (e) => {setEmail(e.target.value);
     setLoginStatus("");
@@ -38,10 +39,10 @@ export default function Login() {
         setLoginStatus("failed");
 
       } else {
-        localStorage.setItem("token", res.data.tokenString);
-        setLoginStatus("");
-        setRedirect(true);
-        window.location.href = "/";
+
+
+        navigate(`/verification/${email}`)
+       
       }
     } catch (err) {
       console.error("Login error:", err);

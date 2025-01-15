@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import ToastMessage from "../GeneralBlock/ToastMsg";
-
+import Autocomplete from '@mui/joy/Autocomplete';
+import Input from '@mui/joy/Input';
 export default function DoctorForm() {
     const { t,i18n } = useTranslation();
   const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -313,7 +314,7 @@ setDupliacte(true)
 
 <div className="col-md-6">
               <label htmlFor="departmentid" className="form-label">{t("Department")}</label>
-              <select
+              {/* <select
                 className="form-select form-select-lg"
                 id="departmentid"
                 name="departmentid"
@@ -325,7 +326,10 @@ setDupliacte(true)
                 {departments.map((dept) => (
                   <option key={dept.id} value={dept.id}>{t(dept.name)}</option>
                 ))}
-              </select>
+              </select> */}
+              <Autocomplete className="form-select-lg" options={departments.map((dept) => (
+                  t(dept.name)
+                ))} />
             </div>
 <div className="col-md-6">
   <label className="form-label" htmlFor="gender">{t("Gender")}</label>
@@ -347,6 +351,11 @@ setDupliacte(true)
 
           {/* City and Area */}
           <div className="row mb-3">
+          <input
+  className="input is-primary"
+  type="text"
+  placeholder="Primary input"
+/>
             <div className="col-md-6">
               <label htmlFor="cityid" className="form-label">{t("City")}</label>
               <select

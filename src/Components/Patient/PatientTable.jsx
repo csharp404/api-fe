@@ -226,7 +226,10 @@ export default function PatientList() {
           />
         </div>
 
-        <table className="table table-hover">
+        <table
+          className="table table-hover "
+          style={{ maxWidth: "85%", margin: "auto" }}
+        >
           <thead>
             <tr className="table-primary">
               <th scope="col">{t("Id")}</th>
@@ -270,7 +273,7 @@ export default function PatientList() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      {t("Action")}
+                      <i className="bi bi-three-dots-vertical"></i>
                     </button>
 
                     <ul

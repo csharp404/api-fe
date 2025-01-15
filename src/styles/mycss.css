@@ -3,6 +3,32 @@
   --color-accent: #00b1c1;
   --color-primary: #1f316f;
 }
+
+.otp-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 /* filter */
 
 /* Styling the filter container */

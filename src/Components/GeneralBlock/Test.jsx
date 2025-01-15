@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function ProtectedRoute({ userRole, children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
   const [isLoading, setIsLoading] = useState(true);
 
   const getTokenData = () => {
